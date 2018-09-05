@@ -9,6 +9,7 @@ My favourites are:
 - file that contains 1 byte 0x0a 
 - empty Word documents 
 - 1x1 JPEG tracking pixel
+- 404 error page
 
 ## Content
 
