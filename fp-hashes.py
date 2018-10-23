@@ -24,14 +24,14 @@ HASH_WHITELIST = [
     'c99a74c555371a433d121f551d6c6398',
     '605db3fdbaff4ba13729371ad0c4fbab3889378e',
     'e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad',
+    # 4096 bytes 0x00
+    '620f0b67a91f7f74151bc5be745b7110',
+    '1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d',
+    'ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7',
     # File filled with 99 zeros (probably caused by AV)
     'fa8715078d45101200a6e2bf7321aa04',
     'd991c16949bd5e85e768385440e18d493ce3aa46',
     '4b298058e1d5fd3f2fa20ead21773912a5dc38da3c0da0bbc7de1adfb6011f1c',
-    # File filled with 4096 zeros (probably caused by AV)
-    '620f0b67a91f7f74151bc5be745b7110',
-    '1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d',
-    'ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7',
     # 1x1 pixel JPEG
     'c5e389341a0b19b6f045823abffc9814',
     'c82cee5f957ad01068f487eecd430a1389e0d922',
