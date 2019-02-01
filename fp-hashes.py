@@ -2,8 +2,8 @@
 #
 # False Positive Hash Generator
 # Florian Roth
-# November 2018
-# v0.1
+# February 2019
+# v0.1.1
 
 import hashlib
 import argparse
