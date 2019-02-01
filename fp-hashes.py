@@ -109,7 +109,11 @@ hash_whitelist = {
     "404 error message":
         ['8e325dc2fea7c8900fc6c4b8c6c394fe',
         '1b3291d4eea179c84145b2814cb53e6a506ec201',
-        '0b52c5338af355699530a47683420e48c7344e779d3e815ff9943cbfdc153cf2']
+        '0b52c5338af355699530a47683420e48c7344e779d3e815ff9943cbfdc153cf2'],
+    "404 error page":
+        ['60ac8e889a1c2af330432bf793164a14',
+         '3a92d2a4e959dfdffb53d106689682efcf23178b',
+         '70c65bd0e084398a87baa298c1fafa52afff402096cb350d563d309565c07e83'],
 }
 
 if __name__ == '__main__':
