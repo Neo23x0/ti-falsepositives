@@ -20,15 +20,15 @@ The script generates hashes for typical false positive files. The current versio
 ## Usage
 
 ```
-    usage: fp-hashes.py [-h] [--python] [--withcomment] [--debug]
+    usage: fp-hashes.py [-h] [--python | --misp | --withcomment ]
 
     False Positive Hash Generator
 
     optional arguments:
       -h, --help     show this help message and exit
       --python       Print as Python list
+      --misp         Print as misp-warninglist
       --withcomment  Print comment lines
-      --debug        Debug output
 ```
 
 ## Output
@@ -100,4 +100,32 @@ c2a889060ed3454408bd8c4282436b5e4bc37cb6f9c2743f281b638887a406d4
 e4cbd17334f4f9494e237381446e7f6fcc2a1136
 018accf59c4975cb89aace1259ca12b4bda46f661088381db828eae2f8a8a966
 ...
+```
+
+
+misp-warninglist (--misp)
+```
+{
+  "description": "Hashes that are often included in IOC lists but are false positives.",
+  "list": [
+    "d41d8cd98f00b204e9800998ecf8427e",
+    "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "...",
+    "7a5b9baf9a4d159445e4404177206bd5",
+    "e4cbd17334f4f9494e237381446e7f6fcc2a1136"
+    "018accf59c4975cb89aace1259ca12b4bda46f661088381db828eae2f8a8a966"
+  ],
+  "matching_attributes": [
+    "md5",
+    "sha1",
+    "sha256",
+    "filename|md5",
+    "filename|sha1",
+    "filename|sha256"
+  ],
+  "name": "Hashes that are often included in IOC lists but are false positives.",
+  "type": "string",
+  "version": 0.1
+}
 ```
