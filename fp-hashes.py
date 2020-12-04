@@ -4,10 +4,12 @@
 # Florian Roth
 # February 2019
 # v0.1.1
+# v0.1.2 added support for misp-warninglist formatted output
 
 import hashlib
 import argparse
 import pprint
+import json
 
 FP_BYTES = [b'\x00']
 
@@ -116,12 +118,28 @@ hash_whitelist = {
          '70c65bd0e084398a87baa298c1fafa52afff402096cb350d563d309565c07e83'],
 }
 
+fp_warninglist = {
+    'description': "Hashes that are often included in IOC lists but are false positives.",
+    'name': "Hashes that are often included in IOC lists but are false positives.",
+    'type':  'string',
+    'version': 0.1,
+    'matching_attributes' : [
+       "md5",
+       "sha1",
+       "sha256",
+       "filename|md5",
+       "filename|sha1",
+       "filename|sha256"
+    ],
+    'list':[]
+}
+
 if __name__ == '__main__':
     # Parse Arguments
     parser = argparse.ArgumentParser(description='False Positive Hash Generator')
     parser.add_argument('--python', action='store_true', default=False, help='Print as Python list')
+    parser.add_argument('--misp', action='store_true', default=False, help='Print as misp-warninglist')
     parser.add_argument('--withcomment', action='store_true', default=False, help='Print comment lines')
-    parser.add_argument('--debug', action='store_true', default=False, help='Debug output')
 
     args = parser.parse_args()
 
@@ -144,6 +162,11 @@ if __name__ == '__main__':
     # Output
     if args.python:
         pprint.pprint(hash_whitelist)
+    elif args.misp:
+        for description in hash_whitelist:
+            for hash in hash_whitelist[description]:
+                fp_warninglist['list'].append(hash)
+        print(json.dumps(fp_warninglist, indent=2, sort_keys=True))
     else:
         for description in hash_whitelist:
             if args.withcomment:
