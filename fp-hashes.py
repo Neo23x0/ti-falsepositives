@@ -122,7 +122,7 @@ fp_warninglist = {
     'description': "Hashes that are often included in IOC lists but are false positives.",
     'name': "Hashes that are often included in IOC lists but are false positives.",
     'type':  'string',
-    'version': 0.1,
+    'version': 1,
     'matching_attributes' : [
        "md5",
        "sha1",
